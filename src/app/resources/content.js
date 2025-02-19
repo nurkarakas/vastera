@@ -1,26 +1,23 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-    firstName: 'Selene',
-    lastName:  'Yu',
+    firstName: 'Nur',
+    lastName:  'Karakaş',
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Design Engineer',
-    avatar:    '/images/avatar.jpg',
-    location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+    role:      'Frontend Developer',
+    avatar:    '/images/nur.jpg',
+    languages: ['Turkish']  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
     display: true,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
+    description: <>I would love to use my knowledge in real projects, gain experience,and work with skilled computer engineers and programmers. Moreover, I am good at teamwork . I have excellent communication skills and a positive attitude. I am open to learning and trying new ideas. In addition, my goal is to keep improving myself while making valuable contributions to every project I take part in.</>
 }
 
 const social = [
-    // Links are automatically displayed.
-    // Import new icons in /once-ui/icons.ts
     {
         name: 'GitHub',
         icon: 'github',
@@ -29,26 +26,22 @@ const social = [
     {
         name: 'LinkedIn',
         icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
-    },
-    {
-        name: 'X',
-        icon: 'x',
-        link: '',
+        link: 'https://www.linkedin.com/in/nurkarakas1/',
     },
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:example@gmail.com',
+        link: 'mailto:sumeyyenurkarakas@gmail.com',
     },
 ]
 
 const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
-    description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Design engineer and builder</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    description: `I am a creative frontend developer specializing in building responsive, user-friendly web applications using modern technologies. From design to deployment, I focus on delivering exceptional digital experiences.`,
+    headline: <>Frontend Developer</>,
+    subline: <>I'm Nur, a frontend developer. I have experience with 
+    <InlineCode>Next.js </InlineCode> <InlineCode>TypeScript</InlineCode><InlineCode>React.js</InlineCode> and <InlineCode>TailwindCSS</InlineCode>.I build single-page, static, and server-rendered applications that are fast, user-friendly, and work well on all devices and browsers.</>
 }
 
 const about = {
@@ -62,43 +55,66 @@ const about = {
     avatar: {
         display: true
     },
-    calendar: {
-        display: true,
-        link: 'https://cal.com'
-    },
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>I am a Front-End Developer with strong skills in creating high-quality web applications. I have experience with Next.js, TypeScript, React.js, and TailwindCSS. I build single-page, static, and server-rendered applications that are fast, user-friendly, and work well on all devices and browsers.
+
+        I am good at connecting web applications with REST APIs, improving website speed, and following SEO and accessibility rules like WCAG standards. I enjoy learning about new technologies in frontend development and using them to create better digital experiences..</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
-                company: 'FLY',
-                timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                company: 'Pr Yazılım',
+                timeframe: 'March 2024 - January 2025',
+                role: 'Front-End Developer',
                 achievements: [
-                    <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
-                    <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
+                    <>We are a technology company creating dynamic and user-friendly web applications. Using
+                    modern tools like React, Next.js, and TypeScript, we deliver fast and reliable solutions
+                    focusing on user experience.</>,
+                    <> Our skills in API integration, database management (SQL/NoSQL),
+                    and SEO help us to improve performance and visibility. With GitHub and CI/CD processes, we
+                    ensure smooth teamwork and on- time delivery of quality projects.</>
                 ],
-                images: [ // optional: leave the array empty if you don't want to display images
-                    {
-                        src: '/images/projects/project-01/cover-01.jpg',
-                        alt: 'Once UI Project',
-                        width: 16,
-                        height: 9
-                    }
+                images: [ 
+                  
                 ]
             },
             {
-                company: 'Creativ3',
-                timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                company: 'TTL Connect',
+                timeframe: 'November 2023 - March 2024',
+                role: 'Web Developer',
                 achievements: [
-                    <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
-                    <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
+                    <>I have experience in optimizing web applications, working with teams to achieve goals, and
+continuously learning new IT trends.</>,
+                    <>I also have basic knowledge of PHP, Laravel, and Docker,
+with experience in simple projects and understanding development processes.</>
+                ],
+                images: [ ]
+            },
+            {
+                company: 'Egegen',
+                timeframe: 'September 2022 - March 2023',
+                role: 'Web Developer',
+                achievements: [
+                    <>I worked on both backend and frontend development for a company focusing on web
+maintenance and infrastructure improvements.</>,
+                    <> Additionally, I played an active role in customer
+relations and communication.</>
+                ],
+                images: [ ]
+            },
+            {
+                company: 'ClickToPeak',
+                timeframe: 'January 2022 - June 2022',
+                role: 'Intern Engineer',
+                achievements: [
+                    <>I worked at a company that offers website development, social media management, and
+Google Ads consultancy to businesses.</>,
+                    <> When I was an employee there, I learned basic frontend
+skills and actively took part in various projects.</>
                 ],
                 images: [ ]
             }
@@ -109,11 +125,11 @@ const about = {
         title: 'Studies',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
+                name: 'Dumlupinar University ',
+                description: <>Computer Engineering</>,
             },
             {
-                name: 'Build the Future',
+                name: 'Bartın Anatolian High School',
                 description: <>Studied online marketing and personal branding.</>,
             }
         ]
