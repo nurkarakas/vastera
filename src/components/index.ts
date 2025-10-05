@@ -1,6 +1,12 @@
-export { Header } from '@/components/Header'
-export { Footer } from '@/components/Footer'
-export { Mailchimp } from '@/components/Mailchimp'
-export { ProjectCard } from '@/components/ProjectCard'
-export { HeadingLink } from '@/components/HeadingLink'
-export { RouteGuard } from '@/components/RouteGuard'
+export { HeadingLink } from './HeadingLink';
+export { Header } from './Header';
+export { Footer } from './Footer';
+export { RouteGuard } from './RouteGuard';
+export { default as ScrollToHash } from './ScrollToHash';
+export { ProjectCard } from './ProjectCard';
+export { ThemeToggle } from './ThemeToggle';
+export { AnimatedTechIcon } from './AnimatedTechIcon';
+export { TechnicalSkills } from './about/TechnicalSkills';
+export { Skills } from './Skills';
+
+// Mailchimp bileşeni çıkarıldı

@@ -1,0 +1,146 @@
+---
+title: "Sunucusuz Mimari: Backend Geliştirmenin Geleceği"
+publishedAt: "2026-01-15"
+summary: "Sunucusuz bilişim hakkında kapsamlı bir inceleme, avantajları, zorlukları ve modern backend geliştirmeyi nasıl yeniden şekillendirdiği."
+tag: "Mimari"
+---
+
+# Sunucusuz Mimari: Backend Geliştirmenin Geleceği
+
+Bulut bilişimin hızla gelişen dünyasında, sunucusuz mimari, uygulama geliştirme ve dağıtımında dönüştürücü bir yaklaşım olarak ortaya çıktı. Bu paradigma değişimi, geliştiricilerin backend altyapısı, ölçeklendirme ve maliyet yönetimi hakkında düşünme şeklini yeniden tanımlıyor.
+
+## Sunucusuz Mimari Nedir?
+
+Sunucusuz mimari, bulut sağlayıcısının sunucuların tahsisini ve sağlanmasını dinamik olarak yönettiği bir bulut bilişim yürütme modelidir. Adının aksine, sunucular hala vardır, ancak geliştiriciler sunucu yönetiminden soyutlanmıştır ve yalnızca kod yazmaya odaklanabilirler.
+
+## Sunucusuz Bilişimin Temel Özellikleri
+
+### 1. Hizmet Olarak Fonksiyon (FaaS)
+
+Sunucusuz mimarinin özü, geliştiricilerin belirli olaylara yanıt olarak çalıştırılan bireysel fonksiyonlar yazdığı Hizmet Olarak Fonksiyon'dur.
+
+```javascript
+// AWS Lambda sunucusuz fonksiyon örneği
+exports.handler = async (event) => {
+  try {
+    const result = veriIşle(event.data);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(result),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
+  }
+};
+```
+
+### 2. Olay Odaklı Mimari
+
+Sunucusuz fonksiyonlar, HTTP istekleri, veritabanı değişiklikleri, dosya yüklemeleri veya zamanlanmış görevler gibi olaylar tarafından tetiklenir.
+
+```javascript
+// Firestore belge oluşturulduğunda tetiklenen Firebase Bulut Fonksiyonu
+exports.kullaniciOlusturuldu = functions.firestore
+  .document("kullanicilar/{kullaniciId}")
+  .onCreate((snap, context) => {
+    const yeniKullanici = snap.data();
+    return hosgeldinEpostasiGonder(yeniKullanici);
+  });
+```
+
+## Sunucusuz Mimarinin Avantajları
+
+### 1. Maliyet Verimliliği
+
+- Yalnızca gerçek hesaplama süresi için ödeme
+- Boş sunucu kaynakları için ücret yok
+- Otomatik ölçeklendirme fazla sağlama işlemini ortadan kaldırır
+
+### 2. Ölçeklenebilirlik
+
+- Otomatik yatay ölçeklendirme
+- Ani trafik artışlarını sorunsuz şekilde işleme
+- Manuel altyapı yönetimi gerektirmez
+
+### 3. Azaltılmış Operasyonel Karmaşıklık
+
+- Bulut sağlayıcısı sunucu bakımını yönetir
+- Otomatik güvenlik yamaları
+- Altyapı yerine iş mantığına odaklanma
+
+## Pratik Uygulama Stratejileri
+
+### Mikroservis Entegrasyonu
+
+Sunucusuz mimari, ayrıntılı ve bağımsız servis dağıtımını sağlayarak mikroservisleri tamamlar.
+
+```javascript
+// Sunucusuz fonksiyonlarla mikroservisler
+const kullaniciServisi = async (event) => {
+  // Kullanıcı ile ilgili işlemler
+};
+
+const siparisServisi = async (event) => {
+  // Sipariş işleme mantığı
+};
+
+const odemeSevisi = async (event) => {
+  // Ödeme işlem yönetimi
+};
+```
+
+### Hibrit Mimariler
+
+Karmaşık uygulamalar için sunucusuz fonksiyonları geleneksel sunucu mimarileriyle birleştirin.
+
+```javascript
+// Hibrit sunucusuz ve geleneksel sunucu yaklaşımı
+async function siparisiIşle(siparis) {
+  // Ödeme doğrulaması için sunucusuz fonksiyon
+  const odemeDogrulamasi = await odemeDogrulamasiniYap(siparis);
+
+  // Karmaşık sipariş işleme için geleneksel sunucu
+  return anaServerSiparisiIşle(siparis, odemeDogrulamasi);
+}
+```
+
+## Zorluklar ve Düşünceler
+
+### 1. Soğuk Başlangıçlar
+
+- İlk fonksiyon çağrısında gecikme olabilir
+- Fonksiyonları sıcak tutma gibi azaltma stratejileri
+
+### 2. Sağlayıcı Bağımlılığı
+
+- Belirli bulut sağlayıcısının uygulamasına bağımlılık
+- Sağlayıcılar arasında geçiş yapma potansiyel zorlukları
+
+### 3. Hata Ayıklama Karmaşıklığı
+
+- Dağıtık izleme daha zor olabilir
+- Gelişmiş izleme araçları gerektirir
+
+## Popüler Sunucusuz Platformlar
+
+- AWS Lambda
+- Google Cloud Functions
+- Azure Functions
+- Cloudflare Workers
+
+## En İyi Uygulamalar
+
+1. Durumsuz fonksiyonlar tasarlayın
+2. Fonksiyon yürütme süresini en aza indirin
+3. Uygun bellek konfigürasyonları kullanın
+4. Uygun hata yönetimi uygulayın
+5. Serverless Framework veya AWS SAM gibi sunucusuz çerçevelerden yararlanın
+
+## Sonuç
+
+Sunucusuz mimari, bulut bilişimde önemli bir evrimdir. Altyapı yönetimini soyutlayarak ve kullanım başına ödeme modeli sunarak, geliştiricilerin daha ölçeklenebilir, verimli ve maliyet etkin uygulamalar inşa etmelerini sağlar.
+
+Bulut teknolojileri olgunlaştıkça, sunucusuz bilişim modern yazılım geliştirmede giderek daha kritik bir rol oynayacak, benzeri görülmemiş esneklik ve yenilik potansiyeli sunacaktır.

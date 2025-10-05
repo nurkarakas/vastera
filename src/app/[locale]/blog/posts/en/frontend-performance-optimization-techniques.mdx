@@ -1,0 +1,353 @@
+---
+title: "Frontend Performance Optimization Techniques"
+publishedAt: "2025-10-20"
+summary: "Explore advanced strategies to enhance web application performance, reduce load times, and improve user experience."
+tag: "Performance"
+image: "/images/blog/frontend-performance-optimization-techniques.jpg"
+---
+
+# Frontend Performance Optimization Techniques
+
+User experience is significantly influenced by the speed of websites and applications. Research shows that each 100ms delay in page load time can reduce conversion rates by up to 7%. In this article, we'll explore effective techniques for improving performance in modern web applications.
+
+## Core Web Vitals and Performance Metrics
+
+Before starting performance optimization, we need to understand what we're measuring. Google's Core Web Vitals provide an important framework for measuring user experience:
+
+### 1. Largest Contentful Paint (LCP)
+
+Measures how quickly the main content of the page loads. For a good user experience, LCP should be less than 2.5 seconds.
+
+### 2. First Input Delay (FID)
+
+Measures the time from when a user first interacts with the page to when the browser responds. FID should be less than 100 ms.
+
+### 3. Cumulative Layout Shift (CLS)
+
+Measures unexpected layout shifts during page load. A good CLS score should be less than 0.1.
+
+### 4. Interaction to Next Paint (INP)
+
+Replacing FID, this new metric focuses on the entire interaction and is recommended to be less than 200 ms.
+
+## JavaScript Optimization
+
+### 1. Code Splitting
+
+Modern JavaScript frameworks allow you to split your application into smaller chunks and load them only when needed.
+
+```javascript
+// Dynamic import in React
+import React, { lazy, Suspense } from "react";
+
+const HeavyComponent = lazy(() => import("./HeavyComponent"));
+
+function App() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <HeavyComponent />
+      </Suspense>
+    </div>
+  );
+}
+```
+
+### 2. Tree Shaking
+
+Modern bundlers automatically eliminate unused code through tree shaking. Use ES modules to take advantage of this.
+
+```javascript
+// Good: Import specific functions
+import { useState, useEffect } from "react";
+
+// Bad: Import entire module
+import * as React from "react";
+```
+
+### 3. Web Workers
+
+Move computationally intensive tasks out of the main thread to prevent UI freezing.
+
+```javascript
+// Creating a web worker
+const worker = new Worker("worker.js");
+
+// Sending message
+worker.postMessage({ data: complexData });
+
+// Receiving results
+worker.onmessage = function (e) {
+  console.log("Processing result:", e.data);
+};
+```
+
+## Image Optimization
+
+### 1. Modern Image Formats
+
+Modern formats like WebP and AVIF provide better compression compared to JPEG and PNG.
+
+```html
+<picture>
+  <source srcset="image.avif" type="image/avif" />
+  <source srcset="image.webp" type="image/webp" />
+  <img src="image.jpg" alt="Description" loading="lazy" />
+</picture>
+```
+
+### 2. Responsive Images
+
+Provide different image sizes for different screen sizes.
+
+```html
+<img
+  src="small.jpg"
+  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+  sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 1500px"
+  alt="Description"
+/>
+```
+
+### 3. Lazy Loading
+
+Load images only when they are close to the viewport.
+
+```html
+<img src="image.jpg" loading="lazy" alt="Description" />
+```
+
+## CSS Optimization
+
+### 1. Critical CSS
+
+Inline CSS required for initial page render and load the rest asynchronously.
+
+```html
+<head>
+  <style>
+    /* Critical CSS here */
+    .header {
+      ...;
+    }
+    .hero {
+      ...;
+    }
+  </style>
+  <link
+    rel="preload"
+    href="full-styles.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+</head>
+```
+
+### 2. CSS Selector Optimization
+
+Avoid complex CSS selectors as they can slow down the browser's rendering process.
+
+```css
+/* Bad: Deeply nested selector */
+.header .navigation ul li a.active {
+  ...;
+}
+
+/* Good: Direct selector */
+.nav-link-active {
+  ...;
+}
+```
+
+### 3. CSS-in-JS Optimization
+
+If using CSS-in-JS, consider server-rendered styles.
+
+```javascript
+// Next.js with styled-components
+import Document from "next/document";
+import { ServerStyleSheet } from "styled-components";
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+}
+```
+
+## Network Optimization
+
+### 1. HTTP/2 and HTTP/3
+
+Use modern HTTP protocols to optimize multiple request and response processes.
+
+### 2. Resource Hints
+
+Tell the browser which resources should be preloaded.
+
+```html
+<!-- Start DNS resolution early -->
+<link rel="dns-prefetch" href="https://api.example.com" />
+
+<!-- Establish connection early -->
+<link rel="preconnect" href="https://api.example.com" />
+
+<!-- Preload critical resource -->
+<link rel="preload" href="critical.js" as="script" />
+```
+
+### 3. Server-Side Render (SSR) and Static Site Generation (SSG)
+
+Use frameworks like Next.js to render pages on the server or generate static HTML at build time.
+
+```javascript
+// SSG usage in Next.js
+export async function getStaticProps() {
+  const data = await fetchData();
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 60, // Revalidation time in seconds
+  };
+}
+```
+
+## React and Modern Framework Optimizations
+
+### 1. Memo and UseMemo
+
+Memoize components and values to prevent unnecessary re-renders.
+
+```javascript
+// Memoizing a component
+const MemoizedComponent = React.memo(function MyComponent(props) {
+  return <div>{props.name}</div>;
+});
+
+// Memoizing a value
+function Component() {
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+
+  const sum = useMemo(() => {
+    console.log("Calculating");
+    return a + b;
+  }, [a, b]);
+
+  return <div>{sum}</div>;
+}
+```
+
+### 2. Virtual Listing (Virtualization)
+
+Use virtual listing for large lists to render only visible items.
+
+```javascript
+import { FixedSizeList } from "react-window";
+
+function VirtualList({ items }) {
+  const Row = ({ index, style }) => (
+    <div style={style}>{items[index].name}</div>
+  );
+
+  return (
+    <FixedSizeList
+      height={500}
+      width={300}
+      itemCount={items.length}
+      itemSize={50}
+    >
+      {Row}
+    </FixedSizeList>
+  );
+}
+```
+
+### 3. Suspense and Concurrent Mode
+
+Use React's Suspense and Concurrent Mode features to manage asynchronous operations without disrupting user experience.
+
+```javascript
+import { Suspense, lazy } from "react";
+
+const LazyComponent = lazy(() => import("./LazyComponent"));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>
+  );
+}
+```
+
+## Performance Monitoring and Analysis
+
+### 1. Lighthouse and PageSpeed Insights
+
+Regularly test your site's performance using Google's tools.
+
+### 2. Web Vitals Tracking
+
+Use the web-vitals library to collect real user metrics.
+
+```javascript
+import { getCLS, getFID, getLCP } from "web-vitals";
+
+function sendToAnalytics(metric) {
+  const body = JSON.stringify(metric);
+  navigator.sendBeacon("/analytics", body);
+}
+
+getCLS(sendToAnalytics);
+getFID(sendToAnalytics);
+getLCP(sendToAnalytics);
+```
+
+### 3. Performance API
+
+Use the browser's Performance API for custom performance measurements.
+
+```javascript
+// Add performance marker
+performance.mark("render-start");
+
+// When operation is complete
+performance.mark("render-end");
+performance.measure("render", "render-start", "render-end");
+
+// Get measurements
+const measures = performance.getEntriesByName("render");
+console.log("Render duration:", measures[0].duration);
+```
+
+## Conclusion
+
+Frontend performance optimization is critical for improving user experience and increasing conversion rates. The techniques shared in this article will help you accelerate your modern web applications.
+
+Remember that performance optimization is not a one-time task but a continuous process. Regularly measure, identify bottlenecks, and make improvements. Your users will appreciate a faster and more responsive experience.

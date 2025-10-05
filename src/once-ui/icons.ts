@@ -26,7 +26,11 @@ import {
 	PiUserCircleDuotone,
 	PiGridFourDuotone,
 	PiBookBookmarkDuotone,
-	PiImageDuotone
+	PiImageDuotone,
+	PiCodeDuotone,
+	PiBracketsCurlyDuotone,
+	PiBrainDuotone,
+	PiTranslateDuotone
 } from "react-icons/pi";
 
 import {
@@ -35,6 +39,29 @@ import {
 	FaLinkedin,
 	FaXTwitter
 } from "react-icons/fa6";
+
+import {
+	SiReact,
+	SiTypescript,
+	SiJavascript,
+	SiHtml5,
+	SiCss3,
+	SiSass,
+	SiLess,
+	SiBootstrap,
+	SiGit,
+	SiPhp,
+	SiFigma,
+	SiAdobephotoshop,
+	SiRedux,
+	SiVuedotjs,
+	SiLaravel,
+	SiTailwindcss,
+	SiNextdotjs,
+	SiNodedotjs,
+	SiMysql,
+	SiMongodb
+} from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
 	chevronUp: HiChevronUp,
@@ -63,5 +90,33 @@ export const iconLibrary: Record<string, IconType> = {
 	github: FaGithub,
 	linkedin: FaLinkedin,
 	x: FaXTwitter,
-	clipboard: HiClipboard
+	clipboard: HiClipboard,
+	
+	// Technology Icons
+	react: SiReact,
+	redux: SiRedux,
+	typescript: SiTypescript,
+	javascript: SiJavascript,
+	html5: SiHtml5,
+	css3: SiCss3,
+	sass: SiSass,
+	less: SiLess,
+	bootstrap: SiBootstrap,
+	git: SiGit,
+	php: SiPhp,
+	figma: SiFigma,
+	photoshop: SiAdobephotoshop,
+	vue: SiVuedotjs,
+	laravel: SiLaravel,
+	tailwind: SiTailwindcss,
+	nextjs: SiNextdotjs,
+	node: SiNodedotjs,
+	mysql: SiMysql,
+	mongodb: SiMongodb,
+	
+	// Concept Icons
+	code: PiCodeDuotone,
+	curlyBrackets: PiBracketsCurlyDuotone,
+	brain: PiBrainDuotone,
+	translate: PiTranslateDuotone
 };

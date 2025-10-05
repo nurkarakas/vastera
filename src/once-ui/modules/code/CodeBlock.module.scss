@@ -1,23 +1,77 @@
 .pre {
-    display: flex;
-    padding: 0 var(--static-space-8);
-    font-family: var(--font-family-code);
-    color: var(--neutral-on-background-strong);
-    font-size: var(--font-size-body-s);
-    white-space: pre;
-    width: 100%;
-    tab-size: 2;
-    margin: 0;
-    overflow-x: auto;
-    min-height: var(--static-space-32);
-    tab-size: 2;
+  // Modern kod bloğu arka plan
+  background: linear-gradient(
+    135deg, 
+    rgba(21, 24, 36, 0.95) 0%, 
+    rgba(33, 38, 58, 0.95) 100%
+  ) !important;
+  
+  // Tam genişlik ve dolgu
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  
+  // Yumuşatılmış kenarlar
+  border-radius: 12px !important;
+  
+  // Gelişmiş tipografi
+  color: #e0e0e0 !important;
+  font-family: 'Fira Code', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  
+  // İç boşluk ve taşma
+  padding: 20px !important;
+  overflow-x: auto !important;
+  
+  // Kod satır numaraları için stil
+  counter-reset: line !important;
+  
+  // Kenarlık ve gölge
+  border: none !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
 
 .code {
-    flex: 1;
-    width: 100%;
-    margin: auto;
-    font-family: inherit;
+  // Kod satırları için stil
+  display: block !important;
+  width: 100% !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  tab-size: 2 !important;
+  
+  // Satır numaralandırma
+  &::before {
+    content: counter(line) !important;
+    counter-increment: line !important;
+    display: inline-block !important;
+    width: 30px !important;
+    margin-right: 15px !important;
+    text-align: right !important;
+    color: rgba(255, 255, 255, 0.3) !important;
+    user-select: none !important;
+  }
+}
+
+// Scrollbar stilleri
+.pre::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 5px !important;
+}
+
+.pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 5px !important;
+}
+
+.pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
 }
 
 .copy {

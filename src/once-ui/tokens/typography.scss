@@ -1,123 +1,82 @@
 :root {
-    /* FONT FAMILY */
-    --font-family-body:     var(--font-primary);
-    --font-family-heading:  var(--font-secondary);
-    --font-family-label:    var(--font-tertiary);
-    --font-family-code:     var(--font-code);
-
-    --font-size-heading-multiplier:   1;
-    --font-size-body-multiplier:      1;
-    --font-size-label-multiplier:     1;
-
-    --line-height-heading-multiplier: 1;
-    --line-height-body-multiplier:    1;
-    --line-height-label-multiplier:   1;
-
-    /* FONT SCALING */
-    --font-scaling-desktop: 16px;
-    --font-scaling-tablet:  16px;
-    --font-scaling-mobile:  17px;
-
-    /* FONT WEIGHT */
-    --font-weight-thin:       100;
-    --font-weight-extraLight: 200;
-    --font-weight-light:      300;
-    --font-weight-normal:     400;
-    --font-weight-medium:     500;
-    --font-weight-semiBold:   600;
-    --font-weight-bold:       700;
-    --font-weight-extraBold:  800;
-
-    --font-weight-10: var(--font-weight-light);
-    --font-weight-20: var(--font-weight-normal);
-    --font-weight-30: var(--font-weight-bold);
-    --font-weight-40: var(--font-weight-extraBold);
-
-    /* FONT SIZE */
-    --font-size-display-xl:   5rem;
-    --font-size-display-l:    4rem;
-    --font-size-display-m:    3rem;
-    --font-size-display-s:    2.5rem;
-    --font-size-display-xs:   2rem;
-
-    --font-size-heading-xl:   1.5rem;
-    --font-size-heading-l:    1.33rem;
-    --font-size-heading-m:    1.25rem;
-    --font-size-heading-s:    1.125rem;
-    --font-size-heading-xs:   1rem;
-
-    --font-size-body-xl:      1.25rem;
-    --font-size-body-l:       1.125rem;
-    --font-size-body-m:       1rem;
-    --font-size-body-s:       0.875rem;
-    --font-size-body-xs:      0.75rem;
-
-    --font-size-label-l:      1rem;
-    --font-size-label-m:      0.925rem;
-    --font-size-label-s:      0.825rem;
-
-    /* LINE HEIGHT */
-    --line-height-display-xl: 5rem;
-    --line-height-display-l:  4.25rem;
-    --line-height-display-m:  3.25rem;
-    --line-height-display-s:  3rem;
-    --line-height-display-xs: 2.5rem;
-
-    --line-height-heading-xl: 2rem;
-    --line-height-heading-l:  1.75rem;
-    --line-height-heading-m:  1.5rem;
-    --line-height-heading-s:  1.5rem;
-    --line-height-heading-xs: 1.25rem;
-
-    --line-height-body-xl:    1.75rem;
-    --line-height-body-l:     1.5rem;
-    --line-height-body-m:     1.5rem;
-    --line-height-body-s:     1.125rem;
-    --line-height-body-xs:    1rem;
-
-    --line-height-label-l:    1.25rem;
-    --line-height-label-m:    1.25rem;
-    --line-height-label-s:    1rem;
-}
-
-@media (--m) {
-    :root {
-        /* FONT SIZE */
-        --font-size-display-xl:   3.5rem;
-        --font-size-display-l:    3.25rem;
-        --font-size-display-m:    2.75rem;
-        --font-size-display-s:    2.25rem;
-        --font-size-display-xs:   1.75rem;
+    // Font names
+    --font-primary-name: 'Campton', sans-serif;
+    --font-secondary-name: 'Campton', sans-serif;
+    --font-tertiary-name: 'Campton', sans-serif;
+    --font-code-name: 'Source Code Pro', monospace;
     
-        --font-size-heading-xl:   1.33rem;
-        --font-size-heading-l:    1.25rem;
-        --font-size-heading-m:    1.125rem;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-strong: 600;
     
-        /* LINE HEIGHT */
-        --line-height-display-xl: 3.75rem;
-        --line-height-display-l:  3.5rem;
-        --line-height-display-m:  3rem;
-        --line-height-display-s:  2.5rem;
-        --line-height-display-xs: 2rem;
+    /* Font weight variations */
+    --font-weight-10: 400;
+    --font-weight-20: 500;
+    --font-weight-30: 600;
+    --font-weight-40: 600;
     
-        --line-height-heading-xl: 1.75rem;
-        --line-height-heading-l:  1.5rem;
-        --line-height-heading-m:  1.25rem;
-    }
-}
-
-@media (--s) {
-    :root {
-        /* FONT SIZE */
-        --font-size-display-xl:   2.75rem;
-        --font-size-display-l:    2.5rem;
-        --font-size-display-m:    2.25rem;
-        --font-size-display-s:    2rem;
+    // Base size and leading
+    --base-size: 22px;
+    --base-leading: 1.5;
     
-        /* LINE HEIGHT */
-        --line-height-display-xl: 3rem;
-        --line-height-display-l:  3rem;
-        --line-height-display-m:  2.5rem;
-        --line-height-display-s:  2.5rem;
-    }
+    // Display variants (headings)
+    --display-normal-xxl: 600 3.5rem/1.2 var(--font-primary-name);
+    --display-normal-xl: 600 3rem/1.2 var(--font-primary-name);
+    --display-normal-l: 600 2.5rem/1.25 var(--font-primary-name);
+    --display-normal-m: 600 2rem/1.25 var(--font-primary-name);
+    --display-normal-s: 600 calc(32px / var(--base-size) * 1rem)/1.25 var(--font-primary-name);
+    --display-normal-xs: 600 1.5rem/1.3 var(--font-primary-name);
+    --display-normal-xxs: 600 1.25rem/1.3 var(--font-primary-name);
+    
+    --display-strong-xxl: 600 3.5rem/1.2 var(--font-primary-name);
+    --display-strong-xl: 600 3rem/1.2 var(--font-primary-name);
+    --display-strong-l: 600 2.5rem/1.25 var(--font-primary-name);
+    --display-strong-m: 600 2rem/1.25 var(--font-primary-name);
+    --display-strong-s: 600 calc(32px / var(--base-size) * 1rem)/1.25 var(--font-primary-name);
+    --display-strong-xs: 600 1.5rem/1.3 var(--font-primary-name);
+    --display-strong-xxs: 600 1.25rem/1.3 var(--font-primary-name);
+    
+    // Heading variants (subheadings)
+    --heading-normal-xxl: 500 2.5rem/1.2 var(--font-primary-name);
+    --heading-normal-xl: 500 2rem/1.2 var(--font-primary-name);
+    --heading-normal-l: 500 1.75rem/1.25 var(--font-primary-name);
+    --heading-normal-m: 500 1.5rem/1.25 var(--font-primary-name);
+    --heading-normal-s: 500 1.25rem/1.3 var(--font-primary-name);
+    --heading-normal-xs: 300 0.82rem/1.5 var(--font-primary-name);
+    --heading-normal-xxs: 300 0.82rem/1.5 var(--font-primary-name);
+    
+    --heading-strong-xxl: 600 2.5rem/1.2 var(--font-primary-name);
+    --heading-strong-xl: 600 2rem/1.2 var(--font-primary-name);
+    --heading-strong-l: 600 calc(32px / var(--base-size) * 1rem)/1.25 var(--font-primary-name);
+    --heading-strong-m: 600 1.5rem/1.25 var(--font-primary-name);
+    --heading-strong-s: 600 1.25rem/1.3 var(--font-primary-name);
+    --heading-strong-xs: 600 1.125rem/1.3 var(--font-primary-name);
+    --heading-strong-xxs: 600 1rem/1.4 var(--font-primary-name);
+    
+    // Body variants (paragraphs)
+    --body-default-xl: 300 0.82rem/1.5 var(--font-primary-name);
+    --body-default-l: 300 0.82rem/1.5 var(--font-primary-name);
+    --body-default-m: 300 0.82rem/1.5 var(--font-primary-name);
+    --body-default-s: 300 0.82rem/1.5 var(--font-primary-name);
+    --body-default-xs: 300 0.82rem/1.5 var(--font-primary-name);
+    
+    --body-strong-xl: 600 1.5rem/1.5 var(--font-primary-name);
+    --body-strong-l: 600 1.25rem/1.5 var(--font-primary-name);
+    --body-strong-m: 600 1.125rem/1.5 var(--font-primary-name);
+    --body-strong-s: 600 1rem/1.5 var(--font-primary-name);
+    --body-strong-xs: 600 1rem/1.5 var(--font-primary-name);
+    
+    // Label variants (buttons, tags, etc.)
+    --label-default-l: 500 1.125rem/1.25 var(--font-primary-name);
+    --label-default-m: 500 1rem/1.25 var(--font-primary-name);
+    --label-default-s: 500 1rem/1.25 var(--font-primary-name);
+    
+    --label-strong-l: 600 1.125rem/1.25 var(--font-primary-name);
+    --label-strong-m: 600 1rem/1.25 var(--font-primary-name);
+    --label-strong-s: 600 1rem/1.25 var(--font-primary-name);
+    
+    // Code variants
+    --code-default-l: 400 1.125rem/1.5 var(--font-code-name);
+    --code-default-m: 400 1rem/1.5 var(--font-code-name);
+    --code-default-s: 400 1rem/1.5 var(--font-code-name);
 }
