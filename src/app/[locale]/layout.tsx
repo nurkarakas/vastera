@@ -33,6 +33,21 @@ export async function generateMetadata({
     metadataBase: new URL(`https://${baseURL}/${locale}`),
     title: home.title,
     description: home.description,
+    icons: {
+      icon: [
+        { url: "/favicon-16x16.svg", sizes: "16x16", type: "image/svg+xml" },
+        { url: "/favicon-32x32.svg", sizes: "32x32", type: "image/svg+xml" },
+        { url: "/favicon-n.svg", sizes: "any", type: "image/svg+xml" },
+      ],
+      apple: [
+        {
+          url: "/apple-touch-icon.svg",
+          sizes: "180x180",
+          type: "image/svg+xml",
+        },
+      ],
+    },
+    manifest: "/manifest.json",
     openGraph: {
       title: `${person.firstName}'`,
       description:

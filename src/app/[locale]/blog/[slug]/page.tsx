@@ -1,9 +1,7 @@
 import ScrollToHash from "@/components/ScrollToHash";
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { getPosts } from "@/app/utils/utils";
 import { Avatar, Button, Flex, Heading, Text } from "@/once-ui/components";
 
 import { baseURL, renderContent } from "@/app/resources";
@@ -11,45 +9,6 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { formatDate } from "@/app/utils/formatDate";
-
-function getPosts(customPath: string[]) {
-  const normalizedPath = customPath.map((p) => (p === "[locale]" ? "en" : p));
-  const postsDir = path.join(
-    process.cwd(),
-    "src",
-    "app",
-    "[locale]",
-    "blog",
-    "posts",
-    normalizedPath[normalizedPath.length - 1]
-  );
-
-  if (!fs.existsSync(postsDir)) return [];
-
-  const files = fs
-    .readdirSync(postsDir)
-    .filter((file) => path.extname(file) === ".mdx");
-
-  return files
-    .map((file) => {
-      const filePath = path.join(postsDir, file);
-      const rawContent = fs.readFileSync(filePath, "utf-8");
-      const { data, content } = matter(rawContent);
-      const slug = path.basename(file, path.extname(file));
-
-      return {
-        metadata: {
-          title: data.title || "",
-          publishedAt: data.publishedAt || data.date,
-          summary: data.summary || data.description || "",
-          image: data.image || "",
-        },
-        slug,
-        content,
-      };
-    })
-    .filter(Boolean);
-}
 
 interface BlogParams {
   params: {

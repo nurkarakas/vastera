@@ -669,74 +669,62 @@ const skills = {
         {
             name: 'React.js',
             level: 5,
-            icon: 'react',
-            description: 'Advanced proficiency in React ecosystem'
+            icon: 'react'
         },
         {
             name: 'Next.js',
             level: 5,
-            icon: 'nextjs',
-            description: 'Expert level in Next.js applications'
+            icon: 'nextjs'
         },
         {
             name: 'TypeScript',
             level: 4,
-            icon: 'typescript',
-            description: 'Strong typing and advanced features'
+            icon: 'typescript'
         },
         {
             name: 'JavaScript',
             level: 5,
-            icon: 'javascript',
-            description: 'Expert in modern JavaScript'
+            icon: 'javascript'
         },
         {
             name: 'Tailwind CSS',
             level: 5,
-            icon: 'tailwind',
-            description: 'Mastery in utility-first CSS'
+            icon: 'tailwind'
         },
         {
             name: 'Figma',
             level: 4,
-            icon: 'figma',
-            description: 'UI/UX design and prototyping'
+            icon: 'figma'
         },
         {
             name: 'Git',    
             level: 4,
-            icon: 'git',
-            description: 'Version control and collaboration'
+            icon: 'git'
         },
         {
             name: 'Node.js',
             level: 3,
-            icon: 'node',
-            description: 'Server-side development'
+            icon: 'node'
         },
         {
             name: 'PHP',
             level: 3,
-            icon: 'php',
-            description: 'Web development and CMS'
+            icon: 'php'
         },
         {
             name: 'Laravel',
             level: 3,
-            icon: 'laravel',
-            description: 'PHP framework development'
+            icon: 'laravel'
         },
         {
             name: 'MySQL',
             level: 4,
-            icon: 'mysql',
-            description: 'Database design and optimization'
+            icon: 'mysql'
         },
         {
             name: 'MongoDB',
             level: 3,
-            icon: 'mongodb',
-            description: 'NoSQL database management'
+            icon: 'mongodb'
         }
     ]
 }

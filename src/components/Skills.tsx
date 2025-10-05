@@ -12,7 +12,6 @@ import {
 
 interface Skill {
   name: string;
-  category: string;
   level: number; // 1-5
   icon?: string;
 }
@@ -59,13 +58,6 @@ const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => {
             {skill.name}
           </Text>
         </Flex>
-        <Text
-          variant="body-default-s"
-          weight="default"
-          onBackground="neutral-weak"
-        >
-          {skill.category}
-        </Text>
       </Flex>
       <Flex gap="xs">
         {Array.from({ length: 5 }).map((_, index) => (
@@ -87,8 +79,6 @@ const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => {
 };
 
 export const Skills: React.FC<SkillsProps> = ({ skills, locale }) => {
-  const categories = Array.from(new Set(skills.map((skill) => skill.category)));
-
   return (
     <RevealFx translateY="20" delay={0.4}>
       <Flex fillWidth direction="column" gap="l">

@@ -1,4 +1,4 @@
-import { getPosts } from '@/app/utils/utils'
+import { getPosts, getWorkProjects } from '@/app/utils/utils'
 import { baseURL, routes as routesConfig } from '@/app/resources'
 import { routing } from '@/i18n/routing'
 
@@ -14,7 +14,7 @@ export default async function sitemap() {
     );
 
     let works = locales.flatMap((locale) => 
-        getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]).map((post) => ({
+        getWorkProjects(['src', 'app', '[locale]', 'work', 'projects', locale]).map((post) => ({
             url: `${baseURL}${includeLocalePrefix ? `/${locale}` : ''}/work/${post.slug}`,
             lastModified: post.metadata.publishedAt,
         }))
