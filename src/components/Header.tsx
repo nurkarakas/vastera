@@ -5,7 +5,6 @@ import { useEffect, useState, useTransition } from "react";
 
 import { Flex, ToggleButton } from "@/once-ui/components";
 import styles from "@/components/Header.module.scss";
-import { ThemeToggle } from "./ThemeToggle";
 
 import { routes, display } from "@/app/resources";
 
@@ -197,7 +196,6 @@ export const Header = () => {
                   ))}
               </Flex>
             )}
-            <ThemeToggle />
           </Flex>
         </Flex>
       </Flex>

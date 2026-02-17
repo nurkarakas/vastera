@@ -115,6 +115,7 @@ export default async function RootLayout({
         as="html"
         lang="en"
         background="page"
+        data-theme="dark"
         data-neutral={style.neutral}
         data-brand={style.brand}
         data-accent={style.accent}
