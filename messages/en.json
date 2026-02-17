@@ -1,4 +1,8 @@
 {
+    "Metadata": {
+        "blog": "Blog",
+        "blogDescription": "Read my latest articles about design and technology"
+    },
     "person": {
         "role": "Design Engineer"
     },
