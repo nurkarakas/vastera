@@ -1,7 +1,9 @@
-import { Posts } from "@/components/blog/Posts";
+import { Flex, Grid, Heading } from "@/once-ui/components";
 import { FloatingParticles } from "@/components/work/FloatingParticles";
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getPosts } from "@/app/utils/utils";
+import Post from "@/components/blog/Post";
 
 export async function generateMetadata({
   params: { locale },
@@ -17,12 +19,34 @@ export async function generateMetadata({
 }
 
 export default function BlogPage({ params }: { params: { locale: string } }) {
+  unstable_setRequestLocale(params.locale);
+
+  // Server-side'da postları al
+  const posts = getPosts(["src", "app", "[locale]", "blog", "posts", params.locale])
+    .filter((post): post is NonNullable<typeof post> => post !== null)
+    .sort((a, b) =>
+      new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
+    );
+
   return (
-    <div className="relative min-h-screen">
+    <Flex fillWidth maxWidth="m" direction="column" gap="l">
       <FloatingParticles />
-      <div className="relative z-10">
-        <Posts locale={params.locale} thumbnail={true} />
-      </div>
-    </div>
+      <Heading as="h1" variant="display-strong-s">Blog</Heading>
+      {posts.length > 0 ? (
+        <Grid
+          columns="repeat(1, 1fr)"
+          mobileColumns="1col"
+          fillWidth
+          marginBottom="40"
+          gap="m"
+        >
+          {posts.map((post) => (
+            <Post key={post.slug} post={post} thumbnail={true} />
+          ))}
+        </Grid>
+      ) : (
+        <Flex>No blog posts found.</Flex>
+      )}
+    </Flex>
   );
 }
