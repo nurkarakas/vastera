@@ -4,7 +4,12 @@ import * as cookie from 'cookie';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const { password } = req.body;
-        const correctPassword = 'password';
+        const correctPassword = process.env.AUTH_PASSWORD;
+
+        if (!correctPassword) {
+            console.error('AUTH_PASSWORD environment variable is not set');
+            return res.status(500).json({ message: 'Server configuration error' });
+        }
 
         if (password === correctPassword) {
             res.setHeader(

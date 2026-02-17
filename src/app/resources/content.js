@@ -12,7 +12,11 @@ const person = {
     languages: ['Turkish', 'English']  // optional: Leave the array empty if you don't want to display languages
 }
 
-// Newsletter bölümü kaldırıldı
+const newsletter = {
+    display: false,
+    title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
+    description: <>Get the latest updates and insights delivered to your inbox.</>
+}
 
 const social = [
     {
@@ -729,4 +733,4 @@ const skills = {
     ]
 }
 
-export { person, social, home, about, work, blog, gallery, skills };
+export { person, social, newsletter, home, about, work, blog, gallery, skills };

@@ -1,0 +1,81 @@
+{
+    "person": {
+        "role": "Frontend Developer"
+    },
+    "newsletter": {
+        "title": "{firstName}'in Bültenine Abone Ol",
+        "description": "Tasarım, teknoloji ve yaratıcılık ile mühendisliğin kesişimi hakkında ara sıra yazıyorum",
+        "button": "Abone ol"
+    },
+    "home": {
+        "label": "Ana Sayfa",
+        "title": "{name} - Portfolyo",
+        "description": "{role} olarak çalışmalarımı sergileyen portfolyo sitesi",
+        "headline": "Frontend Developer",
+        "subline": "Deneyimli bir Frontend Developer olarak, güçlü iletişim becerileri ve takım çalışmasındaki etkinliğimle öne çıkıyorum. React, Next.js ve TypeScript gibi modern teknolojilerle kullanıcı odaklı, yüksek performanslı projeler geliştiriyorum."
+    },
+    "about": {
+        "label": "Hakkımda",
+        "title": "Hakkımda",
+        "description": "{location}'dan {role} {name} ile tanışın",
+        "intro": {
+            "title": "Giriş",
+            "description": "Karmaşık zorlukları basit, zarif tasarım çözümlerine dönüştürme tutkusu olan bir Frontend Developer'ım. Çalışmalarım dijital arayüzler, etkileşimli deneyimler ve tasarım ile teknolojinin birleşimini kapsar."
+        },
+        "work": {
+            "title": "İş Deneyimi",
+            "experiences": {
+                "FLY": {
+                    "timeframe": "2022 - Günümüz",
+                    "role": "Kıdemli Tasarım Mühendisi",
+                    "achievements": "FLY platformu için UI/UX'i yeniden tasarladım, kullanıcı etkileşiminde %20 artış ve %30 daha hızlı yükleme süreleri elde ettim.;Tasarım iş akışlarına AI araçlarının entegrasyonuna öncülük ettim, tasarımcıların %50 daha hızlı iterasyon yapmasını sağladım."
+                },
+                "Creativ3": {
+                    "timeframe": "2018 - 2022",
+                    "role": "Baş Tasarımcı",
+                    "achievements": "Markayı birden fazla platformda birleştiren bir tasarım sistemi geliştirdim, tasarım tutarlılığını %40 artırdım.;Yeni bir ürün serisini piyasaya sürmek için çapraz fonksiyonlu bir ekibe liderlik ettim, şirket gelirinde %15 artışa katkıda bulundum."
+                }
+            }
+        },
+        "studies": {
+            "title": "Eğitim",
+            "institutions": {
+                "University of Jakarta": {
+                    "description": "Yazılım mühendisliği okudum."
+                },
+                "Build the Future": {
+                    "description": "Online pazarlama ve kişisel markalaşma okudum."
+                }
+            }
+        },
+        "technical": {
+            "title": "Teknik Beceriler",
+            "skills": {
+                "Figma": {
+                    "description": "Once UI ile Figma'da doğal olmayan bir hızda prototip yapabiliyorum."
+                },
+                "Nextjs": {
+                    "description": "Next.js + Once UI + Supabase ile yeni nesil uygulamalar oluşturuyorum."
+                }
+            }
+        }
+    },
+    "blog": {
+        "label": "Blog",
+        "title": "Tasarım ve teknoloji hakkında yazıyorum...",
+        "description": "{name}'ın son zamanlarda neler yaptığını okuyun"
+    },
+    "work": {
+        "label": "Projeler",
+        "title": "Projelerim",
+        "description": "{name} tarafından tasarım ve geliştirme projeleri"
+    },
+    "gallery": {
+        "label": "Galeri",
+        "title": "Fotoğraf galerim",
+        "description": "{name} tarafından bir fotoğraf koleksiyonu"
+    },
+    "projectCard": {
+        "label": "Vaka Çalışmasını Oku"
+    }
+}

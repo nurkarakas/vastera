@@ -71,7 +71,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       }}
     >
       {(image || (images && images.length > 0)) && (
-        <Flex flex={thumbnail ? undefined : 6} padding="m">
+        <Flex
+          flex={thumbnail ? undefined : 6}
+          padding="m"
+          style={{ maxWidth: "700px" }}
+        >
           <RevealFx
             style={{ width: "100%", height: "auto" }}
             delay={0.4}
@@ -83,9 +87,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               radius="m"
               alt={title}
               aspectRatio="16 / 9"
+              sizes="(max-width: 640px) 100vw, (max-width: 1100px) 90vw, 1100px"
               src={image || (images && images.length > 0 ? images[0] : "")}
               style={{
                 width: "100%",
+                maxHeight: "420px",
                 objectFit: "contain",
                 backgroundColor: "transparent",
               }}
@@ -97,11 +103,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         mobileDirection="column"
         direction="column"
         flex={thumbnail ? undefined : 4}
-        fillWidth
         paddingX="l"
         paddingY="l"
         gap="0"
         justifyContent="center"
+        style={{ width: "auto", minWidth: 0 }}
       >
         {title && (
           <Flex flex={5}>

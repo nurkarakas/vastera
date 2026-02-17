@@ -47,7 +47,7 @@ export function ProjectsDisplay() {
       paddingX="l"
       direction="column"
       ref={containerRef}
-      style={{ position: "relative", overflow: "hidden" }}
+      style={{ position: "relative", overflow: "hidden", zIndex: 1 }}
     >
       <FloatingParticles
         count={600}
@@ -77,6 +77,7 @@ export function ProjectsDisplay() {
               width: "100%",
               display: "flex",
               justifyContent: index % 2 === 0 ? "flex-start" : "flex-end",
+              maxWidth: "100%",
             }}
           >
             <Flex
@@ -86,6 +87,7 @@ export function ProjectsDisplay() {
                 maxWidth: "1100px",
                 position: "relative",
                 zIndex: 1,
+                margin: "0 auto",
               }}
             >
               <ProjectCard

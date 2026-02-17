@@ -42,10 +42,12 @@ export async function generateStaticParams(): Promise<
       locale,
     ]);
     allPosts.push(
-      ...posts.map((post) => ({
-        slug: post.slug,
-        locale: locale,
-      }))
+      ...posts
+        .filter((post): post is NonNullable<typeof post> => post !== null)
+        .map((post) => ({
+          slug: post.slug,
+          locale: locale,
+        }))
     );
   }
 
@@ -60,7 +62,9 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
     "work",
     "projects",
     locale,
-  ]).find((post) => post.slug === slug);
+  ])
+    .filter((post): post is NonNullable<typeof post> => post !== null)
+    .find((post) => post.slug === slug);
 
   if (!post) {
     return;
@@ -106,6 +110,11 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 
 export default function Project({ params }: WorkParams) {
   unstable_setRequestLocale(params.locale);
+
+  // Hooks must be called before any conditional returns
+  const t = useTranslations();
+  const { person } = renderContent(t);
+
   let post = getWorkProjects([
     "src",
     "app",
@@ -113,14 +122,13 @@ export default function Project({ params }: WorkParams) {
     "work",
     "projects",
     params.locale,
-  ]).find((post) => post.slug === params.slug);
+  ])
+    .filter((p): p is NonNullable<typeof p> => p !== null)
+    .find((p) => p.slug === params.slug);
 
   if (!post) {
     notFound();
   }
-
-  const t = useTranslations();
-  const { person } = renderContent(t);
 
   const avatars =
     post.metadata.team?.map((person) => ({

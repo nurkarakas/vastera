@@ -79,8 +79,9 @@ export default function About({
       title: about.technical.title,
       display: about.technical.display,
       items:
-        about.technical.skillCategories?.map((category) => category.title) ||
-        [],
+        'skillCategories' in about.technical && about.technical.skillCategories
+          ? about.technical.skillCategories.map((category) => category.title)
+          : [],
     },
   ];
   return (
@@ -275,7 +276,7 @@ export default function About({
               <Heading as="h2" id={about.technical.title}>
                 {about.technical.title}
               </Heading>
-              {about.technical.useSkillIcons ? (
+              {'useSkillIcons' in about.technical && about.technical.useSkillIcons && 'skillCategories' in about.technical ? (
                 <TechnicalSkills categories={about.technical.skillCategories} />
               ) : (
                 <Flex direction="column" fillWidth gap="l">

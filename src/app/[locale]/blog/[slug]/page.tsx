@@ -97,6 +97,10 @@ export function generateMetadata({ params: { slug, locale } }: BlogParams) {
 export default function Blog({ params }: BlogParams) {
   unstable_setRequestLocale(params.locale);
 
+  // Hooks must be called before any conditional returns
+  const t = useTranslations();
+  const { person } = renderContent(t);
+
   const posts = getPosts([
     "src",
     "app",
@@ -104,17 +108,13 @@ export default function Blog({ params }: BlogParams) {
     "blog",
     "posts",
     params.locale,
-  ]).filter((p): p is NonNullable<typeof p> => p !== null); // ✅ null'ları filtrele
+  ]).filter((p): p is NonNullable<typeof p> => p !== null);
 
   const post = posts.find((p) => p.slug === params.slug);
 
-  // ✅ erken return ile güvence
   if (!post) {
     return notFound();
   }
-
-  const t = useTranslations();
-  const { person } = renderContent(t);
 
   return (
     <Flex as="section" fillWidth maxWidth="xs" direction="column" gap="m">

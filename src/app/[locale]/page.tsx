@@ -60,7 +60,9 @@ export default function Home({
 }) {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
-  const { home, about, person, newsletter } = renderContent(t);
+  const content = renderContent(t);
+  const { home, about, person } = content;
+  const newsletter = 'newsletter' in content ? content.newsletter : null;
   const { projects } = work;
   const { items: skillItems } = skills;
   return (
