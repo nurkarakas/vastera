@@ -21,14 +21,9 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const { slug, locale } = params;
   const t = await getTranslations();
 
-  // Slug'ı normal isme çevirme
-  const normalizedTitle = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-
-  // Projeyi bulma
+  // Projeyi bulma - slug ile title'ı karşılaştır
   const project = work.projects.find(
-    (p) => p.title.toLowerCase() === normalizedTitle.toLowerCase()
+    (p) => p.title.toLowerCase().replace(/ /g, "-") === slug.toLowerCase()
   );
 
   if (!project) {
