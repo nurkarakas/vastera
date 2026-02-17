@@ -18,7 +18,9 @@ import {
 	HiMiniGlobeAsiaAustralia,
 	HiEnvelope,
 	HiCalendarDays,
-	HiClipboard
+	HiClipboard,
+	HiSun,
+	HiMoon
 } from "react-icons/hi2";
 
 import {
@@ -118,5 +120,9 @@ export const iconLibrary: Record<string, IconType> = {
 	code: PiCodeDuotone,
 	curlyBrackets: PiBracketsCurlyDuotone,
 	brain: PiBrainDuotone,
-	translate: PiTranslateDuotone
+	translate: PiTranslateDuotone,
+
+	// Theme Icons
+	sun: HiSun,
+	moon: HiMoon
 };
