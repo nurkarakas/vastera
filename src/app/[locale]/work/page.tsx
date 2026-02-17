@@ -51,7 +51,7 @@ export default function Work({
   const { person, work } = renderContent(t);
 
   return (
-    <Flex fillWidth maxWidth="m" direction="column">
+    <Flex fillWidth maxWidth="xl" direction="column">
       <script
         type="application/ld+json"
         suppressHydrationWarning
