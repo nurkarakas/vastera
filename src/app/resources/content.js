@@ -364,6 +364,23 @@ const work = {
                 cardTypes: ['Black Card', 'Gold Card', 'Platinum Card', 'Color Card', 'Special Card']
             }
         },
+                {
+            title: 'Hake Web',
+            description: 'Web Project',
+            image: '/images/projects/hake-web.png',
+            features: [
+                { text: 'Custom Designs', icon: 'code' },
+                { text: 'Web Design and Development', icon: 'code' },
+                { text: 'Social Media Management', icon: 'code' }
+            ],
+            technicalDetails: {
+                technologies: ['Vue', 'Tailwind CSS', 'React.js', 'Next.js', 'Responsive Design'],
+                developmentProcess: ['UI/UX Design', 'Brand Identity Creation', 'Social Media Strategy', 'Content Production', 'Graphic Design'],
+                features: ['Social Media Management', 'Brand Identity Creation', 'Graphic Design', 'YouTube Channel Management', 'Web Design'],
+                description: 'Hake Web is an innovative agency platform that responds to all your creative needs, from custom social media graphics to digital advertising designs. It offers customized, attention-grabbing social media graphic designs for Instagram, Facebook, Twitter, and other platforms that suit your brand. Additionally, it helps you stand out by creating unique and memorable logos with visuals that represent your business. To meet your digital advertising needs, it provides effective and original campaign designs, optimized designs for your website or social media ads to increase conversion rates, and SEO-friendly visual and content optimization to increase visibility in search engines.',
+                serviceCategories: ['Social Media Designs', 'Professional Logo Design', 'Advertising and Campaign Designs', 'Web Design', 'Graphic Design']
+            }
+        },
         {
             title: 'Bright',
             description: 'Agency Project',
@@ -382,7 +399,113 @@ const work = {
                 serviceCategories: ['Social Media Designs', 'Professional Logo Design', 'Advertising and Campaign Designs', 'Web Design', 'Graphic Design']
             }
         },
+
         {
+            title: 'UnoLife',
+            description: 'Modern real estate project',
+            image: '/images/projects/uno.png',
+            features: [
+                { text: 'Contemporary Architectural Design', icon: 'code' },
+                { text: 'Private Living Spaces', icon: 'code' },
+                { text: 'Multi-language Support', icon: 'code' },
+                { text: 'Online Meeting System', icon: 'code' }
+            ],
+            technicalDetails: {
+                technologies: ['Google Font API', 'Font Awesome', 'Bootstrap Icons', 'IconScout', 'Popper', 'AOS', 'SweetAlert2', 'Lightbox', 'Swiper', 'FancyBox', 'jQuery', 'Nginx', 'particles.js', 'Animate.css', 'Bootstrap'],
+                developmentProcess: ['UI/UX Design', 'Frontend Development', 'Interactive Map Integration', 'Multi-language System', 'Online Appointment System'],
+                features: ['Project Detail Pages', 'Interactive Map', 'Online Appointment System', 'Real Estate Filtering', '3D Visualization'],
+                description: 'UnoLife is a web platform that introduces and markets modern real estate projects. UnoLife Villas, located at a rapidly developing point with complete dominance over the city in Kyrenia, the popular city of Cyprus, are positioned just 14 minutes from the city center, 4 minutes from Girne American University, and only 7 minutes from Escape Beach. Villa options with two different designs are built according to a 3+1 apartment plan. Each house includes a private living area and parking area. The settlement layout is designed parallel to sea and mountain views.',
+                propertyTypes: ['3+1 Villa', 'Villa with Private Pool', 'Sea View Villa', 'Mountain View Villa']
+            }
+        },
+{
+    title: 'Fineplast',
+    description: 'Plastic manufacturing and industrial solutions company',
+    image: '/images/projects/fineplast.png',
+    features: [
+        { text: 'Plastic Injection Molding', icon: 'code' },
+        { text: 'Custom Mold Design', icon: 'code' },
+        { text: 'Industrial Production', icon: 'code' },
+        { text: 'R&D and Quality Control', icon: 'code' }
+    ],
+    technicalDetails: {
+        technologies: [
+            'React',
+            'Next.js',
+            'Tailwind CSS',
+            'GSAP',
+            'Swiper',
+            'AOS',
+            'Lightbox',
+            'SweetAlert2',
+            'Google Maps',
+            'Cloudflare',
+            'Plesk'
+        ],
+        developmentProcess: [
+            'UI/UX Design',
+            'Frontend Development',
+            'Backend Integration',
+            'Product Catalog System',
+            'Multi-language Integration',
+            'SEO Optimization'
+        ],
+        features: [
+            'Corporate Website',
+            'Product Catalog',
+            'Production Capabilities Page',
+            'Quality Certificates Section',
+            'Contact & Quote Form',
+            'Multi-language Support'
+        ],
+        description: 'Fineplast is a modern plastic manufacturing company specializing in high-quality injection molding and custom plastic solutions. The company serves various industries including automotive, packaging, and consumer goods. With advanced production lines and a strong R&D team, Fineplast delivers durable, cost-effective, and scalable plastic products tailored to client needs.',
+        serviceCategories: [
+            'Injection Molding',
+            'Mold Design',
+            'Mass Production',
+            'Quality Control',
+            'R&D',
+            'Consulting'
+        ]
+    }
+},
+        {
+            title: 'Erol Bakır',
+            description: 'E-commerce website',
+            image: '/images/projects/erol.png',
+            features: [
+                { text: 'Wholesale Sales System', icon: 'code' },
+                { text: 'Multi-lingual Interface', icon: 'code' },
+                { text: 'Catalog Download', icon: 'code' },
+                { text: 'Order Tracking', icon: 'code' }
+            ],
+            technicalDetails: {
+                technologies: ['GSAP', 'Vimeo', 'Google Font API', 'Font Awesome', 'Bootstrap Icons', 'IconScout', 'Popper', 'Google Hosted Libraries', 'jsDelivr', 'cdnjs', 'Google Maps', 'AOS', 'SweetAlert2', 'Lightbox', 'Swiper', 'FancyBox', 'jQuery', 'Plesk', 'Cloudflare'],
+                developmentProcess: ['UI/UX Design', 'Frontend Development', 'Product Management System', 'Order Tracking System', 'Inventory Management'],
+                features: ['Product Categories', 'Wholesale Sales Module', 'Best Sellers List', 'Promotional Products', 'Catalog Download'],
+                description: 'Erol Bakır is an e-commerce platform specializing in souvenir production and wholesale. The company brings its experience and knowledge from the past to the future with its expert staff, offering quality and locally produced products. The platform, which sells handmade copper products such as copper earrings, tourist magnets, copper coffee pots, decorative plates, coffee and tea sets, stands out with its user-friendly interface and advanced order management system.',
+                productCategories: ['Copper Earrings', 'Tourist Magnets', 'Copper Coffee Pots', 'Decorative Plates', 'Coffee Sets', 'Tea Sets']
+            }
+        },
+                {
+            title: 'Hecotec',
+            description: 'Engineering and construction company',
+            image: '/images/projects/heco.png',
+            features: [
+                { text: 'Engineering Services', icon: 'code' },
+                { text: 'Construction Projects', icon: 'code' },
+                { text: 'Project Management', icon: 'code' },
+                { text: 'Consulting Services', icon: 'code' }
+            ],
+            technicalDetails: {
+                technologies: ['GSAP', 'Vimeo', 'Google Font API', 'Font Awesome', 'Bootstrap Icons', 'IconScout', 'Popper', 'Google Hosted Libraries', 'jsDelivr', 'cdnjs', 'Google Maps', 'AOS', 'SweetAlert2', 'Lightbox', 'Swiper', 'FancyBox', 'jQuery', 'Plesk', 'Cloudflare'],
+                developmentProcess: ['UI/UX Design', 'Frontend Development', 'Project Showcase', 'Content Management System', 'Multi-language Integration'],
+                features: ['Corporate Presentation', 'Service Details', 'Project Portfolio', 'Careers Page', 'Multi-language Support'],
+                description: 'Hecotec is an innovative EPC (Engineering, Procurement, Construction) contractor company established in Baku, Azerbaijan in 2016. With its experienced multinational engineering staff, it aims to provide world-class Engineering, Procurement, Construction, Management, and Consulting services in the regional and global market. It has industrial business relationships with leading companies in various engineering and design fields, especially in the Oil and Gas industry.',
+                serviceCategories: ['Engineering', 'Procurement', 'Construction', 'Project Management', 'Consulting']
+            }
+        },
+                {
             title: 'Brussels',
             description: 'Transfer Services',
             image: '/images/projects/bruseels.png',
@@ -418,60 +541,7 @@ const work = {
                 serviceCategories: ['Consulting', 'Menu Planning', 'Training', 'Kitchen Project Design', 'Franchise']
             }
         },
-        {
-            title: 'UnoLife',
-            description: 'Modern real estate project',
-            image: '/images/projects/uno.png',
-            features: [
-                { text: 'Contemporary Architectural Design', icon: 'code' },
-                { text: 'Private Living Spaces', icon: 'code' },
-                { text: 'Multi-language Support', icon: 'code' },
-                { text: 'Online Meeting System', icon: 'code' }
-            ],
-            technicalDetails: {
-                technologies: ['Google Font API', 'Font Awesome', 'Bootstrap Icons', 'IconScout', 'Popper', 'AOS', 'SweetAlert2', 'Lightbox', 'Swiper', 'FancyBox', 'jQuery', 'Nginx', 'particles.js', 'Animate.css', 'Bootstrap'],
-                developmentProcess: ['UI/UX Design', 'Frontend Development', 'Interactive Map Integration', 'Multi-language System', 'Online Appointment System'],
-                features: ['Project Detail Pages', 'Interactive Map', 'Online Appointment System', 'Real Estate Filtering', '3D Visualization'],
-                description: 'UnoLife is a web platform that introduces and markets modern real estate projects. UnoLife Villas, located at a rapidly developing point with complete dominance over the city in Kyrenia, the popular city of Cyprus, are positioned just 14 minutes from the city center, 4 minutes from Girne American University, and only 7 minutes from Escape Beach. Villa options with two different designs are built according to a 3+1 apartment plan. Each house includes a private living area and parking area. The settlement layout is designed parallel to sea and mountain views.',
-                propertyTypes: ['3+1 Villa', 'Villa with Private Pool', 'Sea View Villa', 'Mountain View Villa']
-            }
-        },
-        {
-            title: 'Erol Bakır',
-            description: 'E-commerce website',
-            image: '/images/projects/erol.png',
-            features: [
-                { text: 'Wholesale Sales System', icon: 'code' },
-                { text: 'Multi-lingual Interface', icon: 'code' },
-                { text: 'Catalog Download', icon: 'code' },
-                { text: 'Order Tracking', icon: 'code' }
-            ],
-            technicalDetails: {
-                technologies: ['GSAP', 'Vimeo', 'Google Font API', 'Font Awesome', 'Bootstrap Icons', 'IconScout', 'Popper', 'Google Hosted Libraries', 'jsDelivr', 'cdnjs', 'Google Maps', 'AOS', 'SweetAlert2', 'Lightbox', 'Swiper', 'FancyBox', 'jQuery', 'Plesk', 'Cloudflare'],
-                developmentProcess: ['UI/UX Design', 'Frontend Development', 'Product Management System', 'Order Tracking System', 'Inventory Management'],
-                features: ['Product Categories', 'Wholesale Sales Module', 'Best Sellers List', 'Promotional Products', 'Catalog Download'],
-                description: 'Erol Bakır is an e-commerce platform specializing in souvenir production and wholesale. The company brings its experience and knowledge from the past to the future with its expert staff, offering quality and locally produced products. The platform, which sells handmade copper products such as copper earrings, tourist magnets, copper coffee pots, decorative plates, coffee and tea sets, stands out with its user-friendly interface and advanced order management system.',
-                productCategories: ['Copper Earrings', 'Tourist Magnets', 'Copper Coffee Pots', 'Decorative Plates', 'Coffee Sets', 'Tea Sets']
-            }
-        },
-        {
-            title: 'Hecotec',
-            description: 'Engineering and construction company',
-            image: '/images/projects/heco.png',
-            features: [
-                { text: 'Engineering Services', icon: 'code' },
-                { text: 'Construction Projects', icon: 'code' },
-                { text: 'Project Management', icon: 'code' },
-                { text: 'Consulting Services', icon: 'code' }
-            ],
-            technicalDetails: {
-                technologies: ['GSAP', 'Vimeo', 'Google Font API', 'Font Awesome', 'Bootstrap Icons', 'IconScout', 'Popper', 'Google Hosted Libraries', 'jsDelivr', 'cdnjs', 'Google Maps', 'AOS', 'SweetAlert2', 'Lightbox', 'Swiper', 'FancyBox', 'jQuery', 'Plesk', 'Cloudflare'],
-                developmentProcess: ['UI/UX Design', 'Frontend Development', 'Project Showcase', 'Content Management System', 'Multi-language Integration'],
-                features: ['Corporate Presentation', 'Service Details', 'Project Portfolio', 'Careers Page', 'Multi-language Support'],
-                description: 'Hecotec is an innovative EPC (Engineering, Procurement, Construction) contractor company established in Baku, Azerbaijan in 2016. With its experienced multinational engineering staff, it aims to provide world-class Engineering, Procurement, Construction, Management, and Consulting services in the regional and global market. It has industrial business relationships with leading companies in various engineering and design fields, especially in the Oil and Gas industry.',
-                serviceCategories: ['Engineering', 'Procurement', 'Construction', 'Project Management', 'Consulting']
-            }
-        },
+
         {
             title: 'LocateMyWill',
             description: 'Will and trust registry platform',
